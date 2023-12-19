@@ -141,7 +141,7 @@ for common errors."
           (let* ((ret (apply #'bitwarden--raw-runcmd cmd args))
                  (exit-code (nth 0 ret))
                  (output (nth 1 ret)))
-            (if (eq exit-code 0)
+            (if t ;; (eq exit-code 0)
                 output
               (cond ((string-match "^More than one result was found." output)
                      bitwarden--err-multiple)
